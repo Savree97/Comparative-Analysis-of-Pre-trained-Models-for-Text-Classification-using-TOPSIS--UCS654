@@ -173,12 +173,13 @@ python code/topsis.py
 
 # 📂 Repository Structure
 
+```
 Text-Classification-TOPSIS/
 │
 ├── code/
 │   ├── load_dataset.py
 │   ├── classification_domainwise.py
-│   ├── topsis.py
+│   └── topsis.py
 │
 ├── results/
 │   ├── politics_metrics.csv
@@ -186,10 +187,9 @@ Text-Classification-TOPSIS/
 │   ├── sports_metrics.csv
 │   ├── sports_topsis.csv
 │   ├── medicine_metrics.csv
-│   ├── medicine_topsis.csv
+│   └── medicine_topsis.csv
 │
-├── README.md
-
+└── README.md
 ---
 
 # ✨ Key Highlights
