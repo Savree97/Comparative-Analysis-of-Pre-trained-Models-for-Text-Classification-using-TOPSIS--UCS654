@@ -1,7 +1,8 @@
 # 🧠 Comparative Analysis of Pre-trained Models for Text Classification using TOPSIS  
+
 ---
 
-# 📌 Project Objective
+## 📌 Project Objective
 
 The objective of this assignment is to determine the **best pre-trained transformer model for Text Classification** using a structured multi-criteria decision-making technique:
 
@@ -11,7 +12,7 @@ Instead of relying on a single metric like accuracy, we evaluate models across m
 
 ---
 
-# 🚀 Project Overview
+## 🚀 Project Overview
 
 This project performs:
 
@@ -26,7 +27,7 @@ The evaluation is performed **domain-wise** to analyze how different models beha
 
 ---
 
-# 📰 Text Domains Considered
+## 📰 Text Domains Considered
 
 Each domain is treated as an independent case study:
 
@@ -38,141 +39,152 @@ This allows us to understand domain sensitivity of transformer models.
 
 ---
 
-# 📂 Dataset Source
+## 📂 Dataset Source
 
 Datasets are sourced from **HuggingFace**, which provides publicly available NLP datasets.
 
 Examples:
 - News datasets for Politics & Sports  
-- Medical datasets for Medicine domain  
+- Medical text datasets for the Medicine domain  
 
-Dataset loading implementation:  
+Dataset loading implementation:
 
+```
 code/load_dataset.py
+```
 
 ---
 
-# 🤖 Pre-trained Models Compared
+## 🤖 Pre-trained Models Compared
 
 The following transformer-based models are evaluated:
 
-| Model | Architecture Type |
-|--------|------------------|
-| BERT | Bidirectional Encoder |
-| RoBERTa | Optimized BERT Variant |
-| DistilBERT | Lightweight Distilled Model |
-| ALBERT | Parameter-efficient BERT |
+| Model        | Architecture Type            |
+|--------------|-----------------------------|
+| BERT         | Bidirectional Encoder       |
+| RoBERTa      | Optimized BERT Variant      |
+| DistilBERT   | Lightweight Distilled Model |
+| ALBERT       | Parameter-efficient BERT    |
 
 Each model is trained and evaluated independently for every domain.
 
 ---
 
-# 📊 Evaluation Criteria (Decision Parameters)
+## 📊 Evaluation Criteria (Decision Parameters)
 
 For each model, the following metrics are used to construct the decision matrix:
 
-| Parameter | Description | Type |
-|------------|------------|------|
-| P1 | Accuracy | Maximize |
-| P2 | Precision | Maximize |
-| P3 | Recall | Maximize |
-| P4 | F1-Score | Maximize |
-| P5 | Inference Time | Minimize |
-| P6 | Model Size | Minimize |
+| Parameter | Description      | Type      |
+|-----------|------------------|-----------|
+| P1        | Accuracy         | Maximize  |
+| P2        | Precision        | Maximize  |
+| P3        | Recall           | Maximize  |
+| P4        | F1-Score         | Maximize  |
+| P5        | Inference Time   | Minimize  |
+| P6        | Model Size       | Minimize  |
 
-These six parameters form the basis of the **TOPSIS ranking process**.
+These parameters form the basis of the **TOPSIS ranking process**.
 
 ---
 
-# 🧮 Methodology
+## 🧮 Methodology
 
 The workflow followed in this project:
 
-1️⃣ Perform text classification for each domain using all models  
-2️⃣ Compute evaluation metrics  
-3️⃣ Construct the decision matrix  
-4️⃣ Normalize the matrix  
-5️⃣ Apply weighted scoring  
-6️⃣ Compute Ideal Best & Ideal Worst  
-7️⃣ Calculate TOPSIS score  
-8️⃣ Rank models based on closeness coefficient  
+1. Perform text classification for each domain using all models  
+2. Compute evaluation metrics  
+3. Construct the decision matrix  
+4. Normalize the matrix  
+5. Apply weighted scoring  
+6. Compute Ideal Best & Ideal Worst  
+7. Calculate TOPSIS score  
+8. Rank models based on closeness coefficient  
 
 Implementation files:
 
-code/classification_domainwise.py  
-code/topsis.py  
+```
+code/classification_domainwise.py
+code/topsis.py
+```
 
 ---
 
-# 📈 Results
+## 📈 Results
 
 All results are stored in CSV format inside the `results/` directory.
 
 ---
 
-## 🏛 Politics Domain
+### 🏛 Politics Domain
 
-### 📊 Metrics
+#### 📊 Metrics
 <img width="1089" height="273" alt="image" src="https://github.com/user-attachments/assets/afabc2a2-a116-4885-9b84-bb9a40fa4013" />
 
-### 🏆 TOPSIS Ranking
+#### 🏆 TOPSIS Ranking
 <img width="1331" height="255" alt="image" src="https://github.com/user-attachments/assets/bb55e6f5-0217-4ee1-8a7a-b273aac0863d" />
 
 ---
 
-## ⚽ Sports Domain
+### ⚽ Sports Domain
 
-### 📊 Metrics
+#### 📊 Metrics
 <img width="1088" height="259" alt="image" src="https://github.com/user-attachments/assets/e51bf04a-f3c3-449f-88e7-092383fd9320" />
 
-### 🏆 TOPSIS Ranking
+#### 🏆 TOPSIS Ranking
 <img width="1334" height="278" alt="image" src="https://github.com/user-attachments/assets/1b0a17f6-eca1-4ec2-a4d9-7dcc85febbaa" />
 
 ---
 
-## 🏥 Medicine Domain
+### 🏥 Medicine Domain
 
-### 📊 Metrics
+#### 📊 Metrics
 <img width="1057" height="277" alt="image" src="https://github.com/user-attachments/assets/e3268408-ca8d-4c77-b775-b28b842c7073" />
 
-### 🏆 TOPSIS Ranking
+#### 🏆 TOPSIS Ranking
 <img width="1312" height="267" alt="image" src="https://github.com/user-attachments/assets/6c5c75e6-4641-47fc-8f92-18781190ec74" />
 
 ---
 
-# 🏅 Final Summary of Best Models
+## 🏅 Final Summary of Best Models
 
-| Domain | Best Performing Model |
-|---------|----------------------|
+| Domain   | Best Performing Model |
+|----------|----------------------|
 | Politics | Model ranked 1 in politics_topsis.csv |
-| Sports | Model ranked 1 in sports_topsis.csv |
+| Sports   | Model ranked 1 in sports_topsis.csv |
 | Medicine | Model ranked 1 in medicine_topsis.csv |
 
-📌 Observation:
+📌 **Observation:**
 
 > No single model performs best across all domains.  
-> This highlights the importance of **domain-specific evaluation**.
+> This highlights the importance of domain-specific evaluation.
 
 ---
 
-# 🛠 How to Run the Project
+## 🛠 How to Run the Project
 
 ### 🔹 Step 1: Install Dependencies
 
+```
 pip install -r requirements.txt
+```
 
 ### 🔹 Step 2: Run Classification
 
+```
 python code/classification_domainwise.py
+```
 
 ### 🔹 Step 3: Apply TOPSIS
 
+```
 python code/topsis.py
+```
 
 ---
 
-# 📂 Repository Structure
+## 📂 Repository Structure
 
+```
 Text-Classification-TOPSIS/
 │
 ├── code/
@@ -189,9 +201,11 @@ Text-Classification-TOPSIS/
 │   └── medicine_topsis.csv
 │
 └── README.md
+```
+
 ---
 
-# ✨ Key Highlights
+## ✨ Key Highlights
 
 ✔ Domain-wise model evaluation  
 ✔ Multi-criteria decision analysis  
@@ -201,7 +215,7 @@ Text-Classification-TOPSIS/
 
 ---
 
-# 🎯 Conclusion
+## 🎯 Conclusion
 
 This project successfully demonstrates how **TOPSIS** can be applied to NLP model evaluation.
 
@@ -215,7 +229,7 @@ The results confirm that:
 
 ---
 
-# 👩‍💻 Author
+## 👩‍💻 Author
 
 **Savree Dohar**  
 **Roll Number: 102317097**  
