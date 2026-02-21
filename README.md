@@ -173,7 +173,6 @@ python code/topsis.py
 
 # 📂 Repository Structure
 
-```
 Text-Classification-TOPSIS/
 │
 ├── code/
