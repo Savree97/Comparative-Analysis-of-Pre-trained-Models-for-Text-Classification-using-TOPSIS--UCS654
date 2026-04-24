@@ -233,4 +233,4 @@ The results confirm that:
 
 **Savree Dohar**  
 **Roll Number: 102317097**  
-UCS654 – Predictive Analytics & Statistics  
+UCS761 – Deep Learning
